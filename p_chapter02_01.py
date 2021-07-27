@@ -61,9 +61,6 @@ car_dicts = [
 del car_dicts[1]
 print(car_dicts)
 
-print()
-print()
-
 # 클래스 구조
 # 구조 설계 후 재사용성 증가, 코드 반복 최소화, 메소드 활용
 
@@ -85,18 +82,15 @@ car1 = Car('Ferrari', {'color':'white', 'horsepower':400, 'price':8000})
 car2 = Car('Bmw', {'color':'Black', 'horsepower':270, 'price':5000})
 car3 = Car('Audi', {'color':'Silver', 'horsepower':300, 'price':6000})
 
-print(car1)
-print(car2)
-print(car3)
+print(f"car1:\t{car1}")
+print(f"car2:\t{car2}")
+print(f"car3:\t{car3}\n")
 
-print(car1.__dict__)
-print(car2.__dict__)
-print(car3.__dict__)
+print(f"attribute of car1:\t{car1.__dict__}")
+print(f"attribute of car2:\t{car2.__dict__}")
+print(f"attribute of car3:\t{car3.__dict__}\n")
 
-print(dir(car1))
-
-print()
-print()
+print(f"every attribute of instance:\t{dir(car1)}")
 
 # 리스트 선언
 car_list = []
@@ -105,11 +99,8 @@ car_list.append(car1)
 car_list.append(car2)
 car_list.append(car3)
 
-print(car_list)
-
-print()
-print()
+print(f"car_list:\t{car_list}\n")
 
 for x in car_list:
-    print(repr(x))
-    print(x)
+    print(f"reperenc of cars:\t{repr(x )}")
+    print(f"string of cars:\t{x}\n")
