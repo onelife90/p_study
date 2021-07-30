@@ -84,3 +84,34 @@ print(f"fields name:\t{p1._fields, p2._fields, p3._fields}\n")
 # _asdict(): orderedDict 반환
 print(f"orderedDict of Point1:\t{p1._asdict()}")
 print(f"orderedDict of Point4:\t{p4._asdict()}\n")
+
+
+# 실 사용 실습
+# 반 20명, 4개의 반(A,B,C,D)
+Classes = namedtuple('Classes', ['rank', 'number'])
+
+# 그룹 리스트 선언
+numbers = [str(n) for n in range(1,21)]
+ranks = 'A B C D'.split()
+
+print(f"numbers:\t{numbers}")
+print(f"ranks:\t{ranks}\n")
+
+# List Comprehension
+students = [Classes(rank, number) for rank in ranks for number in numbers]
+
+print(f"length of students:\t{len(students)}")
+print(f"80 students:\t{students}\n")
+
+# 추천
+students2 = [Classes(rank, number)
+            for rank in 'A B C D'.split()
+                for number in [str(n)
+                    for n in range(1,21)]]
+
+print(f"length of students2(non-declaration):\t{len(students2)}")
+print(f"80 students2(non-declaration):\t{students2}\n")
+
+# 출력
+for student in students2:
+    print(f"every student list:\t{student}")
