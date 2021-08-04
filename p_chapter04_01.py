@@ -73,8 +73,25 @@ print(f"make students generator:\t{('%s' % c + str(n) for c in ['A', 'B', 'C', '
 
 for s in ('%s' % c + str(n) for c in ['A', 'B', 'C', 'D'] for n in range(1,21)):
     print(f"students generator(for문):\t{s}")
+print()
 
 # 리스트 주의
 # 깊은 복사 얕은 복사
 # python shallow copy deep copy
 # https://docs.python.org/3/library/copy.html
+marks1 = [['~'] * 3 for _ in range(4)]
+marks2 = [['~'] * 3 ] * 4
+
+print(f"list repeat 3 times and for문 4 times:\t{marks1}")
+print(f"list repeat 3 times and 4 times repeat:\t{marks2}\n")
+
+# 수정
+marks1[0][1] = 'X'
+marks2[0][1] = 'X'
+
+print(f"after modify [0][1] element in marks1:\t{marks1}")
+print(f"after modify [0][1] element in marks2:\t{marks2}\n")
+
+# 증명
+print(f"id of shallow copy(marks1):\t{[id(_) for _ in marks1]}")
+print(f"id of deep copy(marks2):\t{[id(_) for _ in marks2]}")
