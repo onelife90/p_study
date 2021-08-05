@@ -49,3 +49,27 @@ print("immutable tuple value, immutable tuple id:\t {}, {}".format(immutable, id
 print("mutable list value, mutable list id:\t {}, {}\n".format(mutable, id(mutable)))           # list(mutable) assignment
 
 # 위 예제에서 알 수 있듯이 효율적인 메모리 공간을 위해서 python list 상당 부분 사용
+
+
+# sort vs sorted
+# reverse, key=len, key=str.Lower, key=func...
+
+# sorted: 정렬 후 새로운 객체 반환(원본 유지)
+f_list = ['orange', 'apple', 'mango', 'papaya', 'lemon', 'strawberry', 'coconut']
+print(f"sorted:\t{sorted(f_list)}")
+print(f"reverse sorted:\t{sorted(f_list, reverse=True)}")
+print(f"length sorted:\t{sorted(f_list, key=len)}")
+print(f"last letter sorted:\t{sorted(f_list, key=lambda x : x[-1])}")
+print(f"last letter reverse sorted:\t{sorted(f_list, key=lambda x : x[-1], reverse=True)}\n")
+
+# sort: 정렬 후 객체 직접 변경(원본 유지 X)
+# 반환 값 확인(None)
+print('return value, sort:\t', f_list.sort(), f_list)
+print('return value, reverse sort:\t', f_list.sort(reverse=True), f_list)
+print('return value, length sort:\t', f_list.sort(key=len), f_list)
+print('return value, last letter sort:\t', f_list.sort(key=lambda x : x[-1]), f_list)
+print('return value, last letter reverse sort:\t', f_list.sort(key=lambda x : x[-1], reverse=True), f_list)
+
+# List vs Array 적합한 사용법 설명
+# 리스트 기반: 융통성, 다양한 자료형, 범용적 사용
+# 숫자 기반: 배열(리스트와 거의 호환)
